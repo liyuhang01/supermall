@@ -1,6 +1,5 @@
 import {debounce} from 'common/utils'
 import BackTop from 'components/content/backTop/BackTop'
-import {POP, NEW, SELL} from "./const";
 
 // 监听图片的加载，刷新可滚动高度
 export const itemListenerMixin = {
@@ -18,7 +17,7 @@ export const itemListenerMixin = {
     // 调用scroll的refresh刷新可滚动高度
     refresh()
     })
-    //console.log('正常执行')
+  
   }
 }
 
@@ -42,22 +41,24 @@ export const backTopMixin = {
 export const tabControlMixin = {
 	data: function () {
 		return {
-			currentType: POP
+			currentType: "pop"
 		}
 	},
 	methods: {
 		tabClick(index) {
 			switch (index) {
 				case 0:
-					this.currentType = POP
+					this.currentType = "pop"
 					break
 				case 1:
-					this.currentType = NEW
+					this.currentType = "new"
 					break
 				case 2:
-					this.currentType = SELL
+					this.currentType = 'sell'
 					break
 			}
 		}
 	}
 }
+
+

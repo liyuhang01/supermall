@@ -14,7 +14,7 @@ Vue.prototype.$bus = new Vue()
 Vue.use(toast)
 //使用图片懒加载插件
 Vue.use(vueLazyLoad,{
-  loading: require('./assets/img/common/placeholder.png')
+  loading: require('./assets/img/common/1.jpg')
 })
 new Vue({
   router,

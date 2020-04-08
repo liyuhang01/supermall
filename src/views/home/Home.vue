@@ -3,9 +3,9 @@
    
      <nav-bar class="home-nav"><div slot="center">购物街</div></nav-bar>
       <tab-control :titles="['流行','新款','精选']"
-         @itemClick="tabClick" class="tab-control" 
+         @itemClick="tabClick"
          ref="tabControl1" v-show="isTabFixed"></tab-control>
-    <scroll class="content" 
+      <scroll class="content" 
                 ref="scroll" 
                 :probe-type ="3" 
                 @scroll="contentScoll" 
@@ -15,7 +15,7 @@
         <home-recommend-view :recommends="recommends"></home-recommend-view>
         <home-feature></home-feature>
         <tab-control :titles="['流行','新款','精选']"
-         @itemClick="tabClick" class="tab-control" 
+         @itemClick="tabClick"
          ref="tabControl2"></tab-control>
         <goods-list :goods="showGoods"></goods-list>
 
@@ -94,8 +94,8 @@ export default {
       //判断是否是手机展示
         if(this._isMobile()) {
         // console.log(this.$tabbar)
-        
-        this.$toast.show('如果数据不显示，请尝试刷新或者稍后再试。', 1500)
+       
+        this.$toast.show('如果商品不显示，请尝试刷新或者稍后再试。', 1500)
         setTimeout(() => {
           this.$toast.show('GitHub：liyuhang01', 2500)
         }, 1500);
@@ -238,18 +238,7 @@ export default {
   top: 0;
   z-index: 9; */
 }
-.tab-control{
-    display: flex;
-    height: 44px;
-    line-height: 44px;
-    text-align: center; 
-    /* 这个属性就是当距离顶部多少时变成fixed */
-    /* 当使用better-scroll的时候就没有用了 */
-    /* position: sticky; */
-    /* top: 44px; */
-    background: #fff;
 
-}
 .content{
   position: absolute;
   top: 44px;

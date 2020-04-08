@@ -27,13 +27,14 @@ export default {
         //$bus叫事件总线，类似于vuex，但是只是监听事件，不同于vuex是管理整个项目的状态，可以在main.js中直接定义vue的原型，
         this.$bus.$emit("itemImageLoad")
       },
+      // 点击跳转详情页，进行一个判断
       itemClick(){
-        this.$router.push('/detail/'+ this.goodsItem.iid)
+         this.goodsItem.iid ? this.$router.push('./detail/' + this.goodsItem.iid) : this.$toast.show('该页面尚未完成', 1500)
       }
     },
      computed: {
         showImg(){
-            return this.goodsItem.image || this.goodsItem.show.img
+          return this.goodsItem.img || this.goodsItem.image || this.goodsItem.show.img
         }
     }
 }

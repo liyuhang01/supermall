@@ -13,9 +13,9 @@ export default{
             context.commit(ADD_TO_CART,payload)
             resolve('添加商品成功')
         }
-       });
+       })
     },
-    buyNow(){
+    buyNow(context,payload){
         return new Promise((resolve, reject) => {
             let oldProduct = context.state.cartList.find(item => item.iid === payload.iid)
             if(oldProduct){
@@ -26,7 +26,7 @@ export default{
                 context.commit(ADD_TO_CART,payload)
                 resolve('添加商品成功')
             }
-           });
+           })
     }
     
 }

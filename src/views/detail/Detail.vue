@@ -68,6 +68,7 @@ export default {
         this.iid = this.$route.params.iid
         //2.根据iid进行网络请求
         getDetail(this.iid).then(res =>{
+          // console.log(res)
            //1.获取顶部轮播的数据
             this.topImage = res.result.itemInfo.topImages;
             const data = res.result;
@@ -138,11 +139,12 @@ export default {
             product.desc = this.goods.desc;
             product.price = this.goods.realPrice;
             product.iid = this.iid;
-            console.log(product)
+            // console.log(product)
             // 2.放入到购物车中
             if(product.iid){
                 this.$store.dispatch('addCart',product).then(res =>{
-                  //  console.log(this.$toast)
+                  
+                  //  console.log(res)
                     this.$toast.show(res,1500);
                 })
             }else {
@@ -152,8 +154,9 @@ export default {
         },
         //点击购买
         buyTocart(){
-            const product = {}
-        product.image = this.topImages[0];
+        
+        const product = {}
+        product.image = this.topImage[0];
         product.title = this.goods.title;
         product.desc = this.goods.desc;
         product.price = this.goods.realPrice;
@@ -166,7 +169,7 @@ export default {
         })}else {
           this.$toast.show('添加失败请刷新重试', 1500)
         }
-        }
+      }
     }
 
 }

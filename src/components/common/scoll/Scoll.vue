@@ -76,7 +76,7 @@ export default {
         },
        //解决滚动区域的bug,就是图片加载一次刷新一次页面，为了获取最终scroll的高度。
        refresh() {
-           //console.log('-----------')
+            // console.log('-----------')
             this.scroll && this.scroll.refresh()
        },
        getScrollY(){

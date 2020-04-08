@@ -1,6 +1,6 @@
 <template>
   <div class="feature">
-      <a href="https://act.moguijie.com/zzlx67">
+      <a href="http://47.93.151.130">
         <img src="~assets/img/home/recommend_bg.jpg" alt="">
       </a>
   </div>
